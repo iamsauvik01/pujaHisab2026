@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#5c0a12" />
+  <meta name="description" content="Pujo Hisab — a Durga Puja themed personal expense and debt tracker." />
+  <title>Pujo Hisab · Puja Ledger</title>
+
+  <!-- Fonts: Cinzel (regal headings), Poppins (UI), Noto Serif Bengali (greeting) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Serif+Bengali:wght@600&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ============ Decorative background layers (purely visual) ============ -->
+  <div class="bg-decor" aria-hidden="true">
+    <svg class="bg-mandala" viewBox="0 0 200 200">
+      <g fill="none" stroke="currentColor" stroke-width="0.6">
+        <circle cx="100" cy="100" r="96" />
+        <circle cx="100" cy="100" r="80" />
+        <circle cx="100" cy="100" r="58" />
+        <circle cx="100" cy="100" r="30" />
+        <circle cx="100" cy="100" r="12" />
+      </g>
+      <!-- 16 petals generated around the centre -->
+      <g fill="none" stroke="currentColor" stroke-width="0.6" id="petals">
+        <path d="M100 20 C 112 45, 112 60, 100 70 C 88 60, 88 45, 100 20 Z" />
+        <path d="M100 20 C 112 45, 112 60, 100 70 C 88 60, 88 45, 100 20 Z" transform="rotate(22.5 100 100)" />
+        <path d="M100 20 C 112 45, 112 60, 100 70 C 88 60, 88 45, 100 20 Z" transform="rotate(45 100 100)" />
+        <path d="M100 20 C 112 45, 112 60, 100 70 C 88 60, 88 45, 100 20 Z" transform="rotate(67.5 100 100)" />
+        <path d="M100 20 C 112 45, 112 60, 100 70 C 88 60, 88 45, 100 20 Z" transform="rotate(90 100 100)" />
+        <path d="M100 20 C 112 45, 112 60, 100 70 C 88 60, 88 45, 100 20 Z" transform="rotate(112.5 100 100)" />
+        <path d="M100 20 C 112 45, 112 60, 100 70 C 88 60, 88 45, 100 20 Z" transform="rotate(135 100 100)" />
+        <path d="M100 20 C 112 45, 112 60, 100 70 C 88 60, 88 45, 100 20 Z" transform="rotate(157.5 100 100)" />
+        <path d="M100 20 C 112 45, 112 60, 100 70 C 88 60, 88 45, 100 20 Z" transform="rotate(180 100 100)" />
+        <path d="M100 20 C 112 45, 112 60, 100 70 C 88 60, 88 45, 100 20 Z" transform="rotate(202.5 100 100)" />
+        <path d="M100 20 C 112 45, 112 60, 100 70 C 88 60, 88 45, 100 20 Z" transform="rotate(225 100 100)" />
+        <path d="M100 20 C 112 45, 112 60, 100 70 C 88 60, 88 45, 100 20 Z" transform="rotate(247.5 100 100)" />
+        <path d="M100 20 C 112 45, 112 60, 100 70 C 88 60, 88 45, 100 20 Z" transform="rotate(270 100 100)" />
+        <path d="M100 20 C 112 45, 112 60, 100 70 C 88 60, 88 45, 100 20 Z" transform="rotate(292.5 100 100)" />
+        <path d="M100 20 C 112 45, 112 60, 100 70 C 88 60, 88 45, 100 20 Z" transform="rotate(315 100 100)" />
+        <path d="M100 20 C 112 45, 112 60, 100 70 C 88 60, 88 45, 100 20 Z" transform="rotate(337.5 100 100)" />
+      </g>
+    </svg>
+    <!-- Floating embers / diya sparks -->
+    <span class="ember"></span><span class="ember"></span><span class="ember"></span>
+    <span class="ember"></span><span class="ember"></span><span class="ember"></span>
+    <span class="ember"></span><span class="ember"></span>
+  </div>
+
+  <!-- ============================== Header ============================== -->
+  <header class="app-header">
+    <div class="garland" aria-hidden="true"></div>
+    <div class="header-inner">
+      <div class="brand">
+        <!-- Trinayan (Ma Durga's third eye) emblem -->
+        <svg class="brand-emblem" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <radialGradient id="emblemGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ffe9a8" />
+              <stop offset="60%" stop-color="#f5b82e" />
+              <stop offset="100%" stop-color="#d9861a" />
+            </radialGradient>
+          </defs>
+          <g stroke="url(#emblemGlow)" stroke-width="2.4" stroke-linecap="round">
+            <line x1="32" y1="4" x2="32" y2="12" />
+            <line x1="12" y1="12" x2="17" y2="18" />
+            <line x1="52" y1="12" x2="47" y2="18" />
+            <line x1="4" y1="30" x2="11" y2="31" />
+            <line x1="60" y1="30" x2="53" y2="31" />
+          </g>
+          <path d="M8 36 Q32 12 56 36 Q32 58 8 36 Z" fill="none" stroke="url(#emblemGlow)" stroke-width="3" />
+          <circle cx="32" cy="36" r="9" fill="url(#emblemGlow)" />
+          <circle cx="32" cy="36" r="4" fill="#5c0a12" />
+        </svg>
+        <div class="brand-text">
+          <span class="brand-greeting" lang="bn">শুভ শারদীয়া</span>
+          <h1 class="brand-title">Pujo Hisab</h1>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <span class="admin-badge" hidden>
+          <span class="dot" aria-hidden="true"></span> Admin
+        </span>
+        <button type="button" class="icon-btn" id="headerAuthBtn" aria-label="Admin login">
+          <!-- Lock icon (swapped for logout icon via CSS when logged in) -->
+          <svg class="icon icon-lock" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 10V7a5 5 0 0 1 10 0v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <rect x="4.5" y="10" width="15" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="2" />
+            <circle cx="12" cy="15.5" r="1.6" fill="currentColor" />
+          </svg>
+          <svg class="icon icon-logout" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path d="M10 8l-4 4 4 4M6 12h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =============================== Main =============================== -->
+  <main class="app-main" id="main">
+
+    <!-- Loading state shown until data is ready -->
+    <div class="loader" id="loader" role="status">
+      <span class="diya" aria-hidden="true"></span>
+      <span>Lighting the lamps…</span>
+    </div>
+
+    <!-- ------------------------- Dashboard view ------------------------- -->
+    <section class="view view-ledger is-active" id="viewLedger" aria-labelledby="ledgerHeading" hidden>
+      <h2 class="visually-hidden" id="ledgerHeading">Ledger</h2>
+
+      <!-- Summary tiles -->
+      <div class="summary">
+        <div class="summary-net">
+          <span class="summary-label">Net position</span>
+          <strong class="summary-net-value" id="sumNet">₹0</strong>
+          <span class="summary-hint" id="sumNetHint">All settled</span>
+        </div>
+        <div class="summary-split">
+          <div class="summary-tile is-pos">
+            <span class="summary-label">Owed to you</span>
+            <strong id="sumPos">₹0</strong>
+          </div>
+          <div class="summary-tile is-neg">
+            <span class="summary-label">You owe</span>
+            <strong id="sumNeg">₹0</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search + list -->
+      <div class="list-toolbar">
+        <label class="search" for="searchInput">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" /><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+          <input type="search" id="searchInput" placeholder="Search friends" autocomplete="off" aria-label="Search friends" />
+        </label>
+        <button type="button" class="chip-btn" id="sortBtn" aria-label="Change sort order">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16M7 20l-3-3M7 20l3-3M17 20V4M17 4l-3 3M17 4l3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <span id="sortLabel">Default</span>
+        </button>
+      </div>
+
+      <ul class="people-list" id="peopleList" aria-label="Friends and balances"></ul>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <p>No friends match your search.</p>
+      </div>
+    </section>
+
+    <!-- --------------------------- Admin view --------------------------- -->
+    <section class="view view-admin" id="viewAdmin" aria-labelledby="adminHeading" hidden>
+      <div class="view-head">
+        <h2 id="adminHeading">Admin Panel</h2>
+        <p>The app always reads from data.json. Changes here last until you reload, so download the updated data.json and replace the file to keep them.</p>
+      </div>
+
+      <div class="admin-grid">
+        <!-- Add bill -->
+        <form class="card form-card" id="addBillForm" novalidate>
+          <h3 class="card-title"><span class="card-title-icon" aria-hidden="true">₹</span> Add a bill</h3>
+
+          <div class="field">
+            <label for="billPerson">Person</label>
+            <select id="billPerson" required></select>
+          </div>
+
+          <fieldset class="field">
+            <legend>Type</legend>
+            <div class="segmented" role="radiogroup">
+              <input type="radio" name="billType" id="billTypePos" value="pos" checked />
+              <label for="billTypePos" class="seg-pos">They owe me <b>+</b></label>
+              <input type="radio" name="billType" id="billTypeNeg" value="neg" />
+              <label for="billTypeNeg" class="seg-neg">I owe them <b>−</b></label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="billAmount">Amount (₹)</label>
+            <input type="text" id="billAmount" inputmode="decimal" placeholder="e.g. 414" autocomplete="off" required />
+            <span class="field-error" data-for="billAmount"></span>
+          </div>
+
+          <div class="field">
+            <label for="billDesc">Description</label>
+            <input type="text" id="billDesc" maxlength="80" placeholder="e.g. Pandal hopping food" list="descSuggestions" />
+            <datalist id="descSuggestions">
+              <option value="Pandal hopping food"></option>
+              <option value="Bhog contribution"></option>
+              <option value="Cab / Auto fare"></option>
+              <option value="Dhunuchi & puja items"></option>
+              <option value="Shared Expense"></option>
+            </datalist>
+          </div>
+
+          <div class="field">
+            <label for="billDate">Date <span class="optional">(optional)</span></label>
+            <input type="date" id="billDate" />
+          </div>
+
+          <p class="preview" id="billPreview" aria-live="polite"></p>
+
+          <button type="submit" class="btn btn-gold btn-block">Add bill</button>
+        </form>
+
+        <!-- Add person -->
+        <form class="card form-card" id="addPersonForm" novalidate>
+          <h3 class="card-title"><span class="card-title-icon" aria-hidden="true">+</span> Add a person</h3>
+          <div class="field">
+            <label for="personName">Name</label>
+            <input type="text" id="personName" maxlength="40" placeholder="e.g. Debolina" autocomplete="off" autocapitalize="words" required />
+            <span class="field-error" data-for="personName"></span>
+          </div>
+          <button type="submit" class="btn btn-outline btn-block">Add person</button>
+        </form>
+
+        <!-- Data tools -->
+        <div class="card form-card">
+          <h3 class="card-title"><span class="card-title-icon" aria-hidden="true">{ }</span> Data</h3>
+          <p class="muted small" id="lastUpdated"></p>
+          <div class="btn-row">
+            <button type="button" class="btn btn-outline" id="copyJsonBtn">Copy JSON</button>
+            <button type="button" class="btn btn-outline" id="downloadJsonBtn">Download</button>
+          </div>
+          <div class="btn-row">
+            <label class="btn btn-ghost" for="importJsonInput">Import JSON</label>
+            <input type="file" id="importJsonInput" accept="application/json,.json" class="visually-hidden" />
+            <button type="button" class="btn btn-ghost btn-danger-text" id="resetDataBtn">Reload data.json</button>
+          </div>
+          <details class="json-details">
+            <summary>View JSON</summary>
+            <textarea id="jsonPreview" readonly rows="10" aria-label="Current data as JSON"></textarea>
+          </details>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-ghost btn-block logout-btn" id="logoutBtn">Log out</button>
+    </section>
+  </main>
+
+  <!-- ===================== Bottom tab navigation ===================== -->
+  <nav class="tabbar" aria-label="Primary">
+    <button type="button" class="tab is-active" data-view="ledger" aria-current="page">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+      <span>Ledger</span>
+    </button>
+    <button type="button" class="tab" data-view="admin">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" /><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      <span>Admin</span>
+    </button>
+  </nav>
+
+  <!-- ============================== Modals ============================== -->
+
+  <!-- Breakdown modal: itemised bills for one person -->
+  <div class="modal" id="breakdownModal" role="dialog" aria-modal="true" aria-labelledby="bdName" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-sheet">
+      <div class="sheet-handle" aria-hidden="true"></div>
+      <header class="modal-head">
+        <div class="bd-identity">
+          <span class="avatar avatar-lg" id="bdAvatar" aria-hidden="true"></span>
+          <div>
+            <h2 id="bdName">Name</h2>
+            <p class="bd-status" id="bdStatus"></p>
+          </div>
+        </div>
+        <button type="button" class="icon-btn icon-btn-plain" data-close aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+        </button>
+      </header>
+
+      <div class="bd-total">
+        <span class="bd-total-value" id="bdTotal">₹0</span>
+        <code class="bd-formula" id="bdFormula"></code>
+      </div>
+
+      <ul class="bill-list" id="bdList" aria-label="Itemised bills"></ul>
+
+      <footer class="modal-foot admin-only">
+        <button type="button" class="btn btn-gold" id="bdAddBillBtn">Add bill</button>
+        <button type="button" class="btn btn-ghost btn-danger-text" id="bdDeletePersonBtn">Remove person</button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Login modal -->
+  <div class="modal" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-sheet modal-sheet-sm">
+      <div class="sheet-handle" aria-hidden="true"></div>
+      <header class="modal-head">
+        <div>
+          <h2 id="loginTitle">Admin login</h2>
+          <p class="muted small">Sign in to add people and bills.</p>
+        </div>
+        <button type="button" class="icon-btn icon-btn-plain" data-close aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+        </button>
+      </header>
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <label for="loginUser">Username</label>
+          <input type="text" id="loginUser" autocomplete="username" autocapitalize="none" spellcheck="false" required />
+        </div>
+        <div class="field">
+          <label for="loginPass">Password</label>
+          <div class="password-wrap">
+            <input type="password" id="loginPass" autocomplete="current-password" required />
+            <button type="button" class="pw-toggle" id="pwToggle" aria-label="Show password">Show</button>
+          </div>
+        </div>
+        <p class="form-error" id="loginError" role="alert"></p>
+        <button type="submit" class="btn btn-gold btn-block">Log in</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Generic confirm dialog -->
+  <div class="modal" id="confirmModal" role="alertdialog" aria-modal="true" aria-labelledby="confirmTitle" aria-describedby="confirmMsg" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-sheet modal-sheet-sm">
+      <h2 id="confirmTitle">Are you sure?</h2>
+      <p id="confirmMsg" class="muted"></p>
+      <div class="btn-row">
+        <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+        <button type="button" class="btn btn-danger" id="confirmOk">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notifications -->
+  <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
