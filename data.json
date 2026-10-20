@@ -30,7 +30,8 @@
         { "id": "ruman-2", "amount": 1076, "description": "Puja Stock 1" },
         { "id": "ruman-3", "amount": 508, "description": "Saptami Day 1 Baba Lodge" },
         { "id": "ruman-4", "amount": 414, "description": "Sweety Bar" },
-        { "id": "ruman-5", "amount": 531, "description": "Saptami Day 2 Baba Lodge" }
+        { "id": "ruman-5", "amount": 531, "description": "Saptami Day 2 Baba Lodge" },
+        { "id": "ruman-6", "amount": 500, "description": "GPay" }
       ]
     },
     {
