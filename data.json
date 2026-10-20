@@ -1,7 +1,8 @@
+
 {
   "version": 1,
   "currency": "₹",
-  "updatedAt": "2026-10-19T00:00:00.000Z",
+  "updatedAt": "2026-10-21T00:00:00.000Z",
   "people": [
     {
       "id": "abhay",
@@ -9,7 +10,10 @@
       "bills": [
         { "id": "abhay-1", "amount": 125, "description": "Cake" },
         { "id": "abhay-2", "amount": 1076, "description": "Puja Stock 1" },
-        { "id": "abhay-3", "amount": 414, "description": "Sweety Bar" }
+        { "id": "abhay-3", "amount": 414, "description": "Sweety Bar" },
+        { "id": "abhay-4", "amount": 60, "description": "Navami Night Booze" },
+        { "id": "abhay-5", "amount": 92, "description": "Rynjah snacks" },
+        { "id": "abhay-6", "amount": 215, "description": "Navami Night Booze" }
       ]
     },
     {
@@ -19,7 +23,9 @@
         { "id": "nabaneet-1", "amount": 293, "description": "Soshti Booze" },
         { "id": "nabaneet-2", "amount": 1076, "description": "Puja Stock 1" },
         { "id": "nabaneet-3", "amount": 508, "description": "Saptami Day 1 Baba Lodge" },
-        { "id": "nabaneet-4", "amount": 414, "description": "Sweety Bar" }
+        { "id": "nabaneet-4", "amount": 414, "description": "Sweety Bar" },
+        { "id": "nabaneet-5", "amount": 92, "description": "Rynjah snacks" },
+        { "id": "nabaneet-6", "amount": 215, "description": "Navami Night Booze" }
       ]
     },
     {
@@ -31,7 +37,10 @@
         { "id": "ruman-3", "amount": 508, "description": "Saptami Day 1 Baba Lodge" },
         { "id": "ruman-4", "amount": 414, "description": "Sweety Bar" },
         { "id": "ruman-5", "amount": 531, "description": "Saptami Day 2 Baba Lodge" },
-        { "id": "ruman-6", "amount": 500, "description": "GPay" }
+        { "id": "ruman-6", "amount": 500, "description": "Gpay to friend" },
+        { "id": "ruman-7", "amount": -425, "description": "Navami Morning" },
+        { "id": "ruman-8", "amount": 92, "description": "Rynjah snacks" },
+        { "id": "ruman-9", "amount": 215, "description": "Navami Night Booze" }
       ]
     },
     {
@@ -40,7 +49,9 @@
       "bills": [
         { "id": "karmakar-1", "amount": 293, "description": "Soshti Booze" },
         { "id": "karmakar-2", "amount": 1076, "description": "Puja Stock 1" },
-        { "id": "karmakar-3", "amount": 414, "description": "Sweety Bar" }
+        { "id": "karmakar-3", "amount": 414, "description": "Sweety Bar" },
+        { "id": "karmakar-4", "amount": 92, "description": "Rynjah snacks" },
+        { "id": "karmakar-5", "amount": 215, "description": "Navami Night Booze" }
       ]
     },
     {
@@ -48,8 +59,11 @@
       "name": "Mahesh",
       "bills": [
         { "id": "mahesh-1", "amount": 414, "description": "Sweety Bar" },
-        { "id": "mahesh-2", "amount": 414, "description": "Sweety Bar Karan" }
+        { "id": "mahesh-2", "amount": 414, "description": "Sweety Bar Karan" },
+        { "id": "mahesh-3", "amount": 92, "description": "Rynjah snacks" },
+        { "id": "mahesh-4", "amount": 215, "description": "Navami Night Booze" }
       ]
     }
   ]
 }
+
